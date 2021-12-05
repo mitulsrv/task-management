@@ -14,8 +14,8 @@ const ListComponent = (props) => {
                     <tr>
                         <th>Task Name</th>
                         <th>Due Date</th>
-                        <th>Status</th>
                         <th>Priority</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,8 +26,8 @@ const ListComponent = (props) => {
                                 return (<tr>
                                     <td  onClick={() => { handleStatusChange(d.id);}}>{d.firstName}</td>
                                     <td>{d.dueDate}</td>
-                                    <td style={{color: d.status ? 'green' : 'red'}}>{d.status ? 'Done' : 'Pending'}</td>
                                     <td>{d.priority}</td>
+                                    <td style={{color: d.status ? 'green' : 'red'}}>{d.status ? 'Done' : 'Pending'}</td>
                                 </tr>);
                             })
                         : []
