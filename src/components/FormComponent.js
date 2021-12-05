@@ -31,7 +31,7 @@ const FormComponent = (props) => {
             }
             if (error.inner && error.inner.length) {
                 let errors = {};
-                error.inner.map((e) => {
+                error.inner.forEach((e) => {
                     Object.assign(errors, { [e.path]: e.errors[0] })
                 })
                 setFormErrors(errors);
@@ -44,7 +44,7 @@ const FormComponent = (props) => {
 
     }, [data]);
     const handleFormChange = (e) => {
-        if(e.target.name == 'status'){
+        if(e.target.name === 'status'){
             setData(prevState => {
                 return { ...prevState, [e.target.name]:  e.target.checked }
             })
